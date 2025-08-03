@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Friendship Day</title>
+  <style>
+    body {
+      background-color: #ffc8dd;
+      margin: 0;
+      height: 100vh;
+      overflow: hidden;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      color: #FF337E;
+    }
+
+    .sprinkle {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      background-color: white;
+      border-radius: 50%;
+      top: -10px;
+      animation-name: fall;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+      opacity: 0.9;
+    }
+
+    @keyframes fall {
+      0% {
+        top: -10px;
+        opacity: 1;
+      }
+      100% {
+        top: 100vh;
+        opacity: 0;
+      }
+    }
+
+    .card {
+      z-index: 1;
+      width: 350px;
+      background-color: #fff0f5;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      text-align: center;
+    }
+
+    h1 {
+      margin-top: 0;
+      font-size: 24px;
+    }
+
+    h2 {
+      margin: 10px 0;
+      font-size: 20px;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Happy Friendship Day</h1>
+    <h2>Manya</h2>
+    <p>
+      Dear Manya,<br>
+      On this Friendship Day, I just want to say thank you for being the sunshine in my life. 
+      Your laughter, kindness, and endless support mean the world to me. 
+      Here's to many more memories, inside jokes, and late-night chats! 💕
+    </p>
+  </div>
+
+  <script>
+    // Create 100 falling white sprinkles
+    for (let i = 0; i < 100; i++) {
+      const sprinkle = document.createElement('div');
+      sprinkle.className = 'sprinkle';
+      sprinkle.style.left = `${Math.random() * 100}vw`;
+      sprinkle.style.animationDuration = `${2 + Math.random() * 3}s`;
+      sprinkle.style.animationDelay = `${Math.random() * 5}s`;
+      document.body.appendChild(sprinkle);
+    }
+  </script>
+</body>
+</html>
